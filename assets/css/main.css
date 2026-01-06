@@ -1,0 +1,575 @@
+/**
+ * Main CSS File - Alalama Tech Theme
+ * Additional Styles & Components
+ * Version: 1.0.0
+ */
+
+/* ============================================
+   Additional Utility Classes
+   ============================================ */
+   
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 900;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-dark);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.section-header {
+    margin-bottom: var(--spacing-3xl);
+}
+
+/* ============================================
+   Enhanced Stats Section
+   ============================================ */
+   
+.stats-section {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    padding: var(--spacing-2xl) 0;
+}
+
+.stat-item {
+    padding: var(--spacing-lg);
+    transition: var(--transition-base);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: var(--font-size-5xl);
+    font-weight: 900;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: var(--font-size-lg);
+    opacity: 0.9;
+}
+
+/* ============================================
+   Enhanced Service Cards
+   ============================================ */
+   
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+    transition: var(--transition-base);
+}
+
+.service-card:hover::before {
+    left: 0;
+}
+
+.service-card .card-icon {
+    background: linear-gradient(135deg, #0066CC20 0%, #00499920 100%);
+    color: var(--color-primary);
+}
+
+.service-card:hover .card-icon {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    transform: scale(1.1);
+}
+
+/* ============================================
+   Solutions Section
+   ============================================ */
+   
+.solution-card {
+    position: relative;
+}
+
+.solution-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.solution-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.solution-card:hover .solution-image img {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   Partners Section
+   ============================================ */
+   
+.partners-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.partner-logo {
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.partner-logo img {
+    max-width: 120px;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: var(--transition-base);
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ============================================
+   CTA Section
+   ============================================ */
+   
+.cta-section {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: var(--color-white);
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-section p {
+    font-size: var(--font-size-xl);
+    opacity: 0.95;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ============================================
+   Hero Badges
+   ============================================ */
+   
+.hero-badges {
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-xl);
+}
+
+.badge-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+}
+
+.badge-item i {
+    color: var(--color-accent);
+}
+
+/* ============================================
+   Portfolio Grid
+   ============================================ */
+   
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    height: 350px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: var(--spacing-lg);
+    color: var(--color-white);
+    transform: translateY(100%);
+    transition: var(--transition-base);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.portfolio-category {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+}
+
+/* ============================================
+   Mobile Menu Styles
+   ============================================ */
+   
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - 70px);
+    background: var(--color-white);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-lg);
+    transition: var(--transition-base);
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-nav-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-nav-menu li {
+    margin-bottom: var(--spacing-md);
+}
+
+.mobile-nav-menu li a {
+    display: block;
+    padding: var(--spacing-sm);
+    color: var(--color-text);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+}
+
+.mobile-nav-menu li a:hover {
+    background: var(--color-bg-light);
+    color: var(--color-primary);
+}
+
+.mobile-cta {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+}
+
+.mobile-contact {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.phone-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.phone-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    direction: ltr;
+    text-align: right;
+}
+
+/* ============================================
+   Back to Top Button
+   ============================================ */
+   
+#back-to-top {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    left: var(--spacing-lg);
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-base);
+    z-index: 998;
+}
+
+#back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ============================================
+   Page Header
+   ============================================ */
+   
+.page-header {
+    background: var(--color-bg-light);
+    padding: var(--spacing-xl) 0;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.page-title {
+    font-size: var(--font-size-4xl);
+    margin: 0;
+}
+
+.breadcrumbs {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.breadcrumbs a {
+    color: var(--color-primary);
+}
+
+/* ============================================
+   Form Styles
+   ============================================ */
+   
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    transition: var(--transition-base);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.form-control.error {
+    border-color: #dc3545;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* ============================================
+   Footer Enhancements
+   ============================================ */
+   
+.footer-contact-item {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-contact-item i {
+    color: var(--color-primary);
+    font-size: var(--font-size-xl);
+    margin-top: var(--spacing-xs);
+}
+
+.footer-contact-item a {
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-contact-item a:hover {
+    color: var(--color-white);
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom-links a:hover {
+    color: var(--color-white);
+}
+
+.footer-bottom-links span {
+    opacity: 0.5;
+}
+
+/* ============================================
+   Loading States
+   ============================================ */
+   
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.btn.loading {
+    position: relative;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   Responsive Tablet
+   ============================================ */
+   
+@media (max-width: 1024px) {
+    .partners-logos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-widgets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   Responsive Mobile
+   ============================================ */
+   
+@media (max-width: 768px) {
+    .hero-badges {
+        flex-direction: column;
+    }
+    
+    .partners-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #back-to-top {
+        bottom: var(--spacing-md);
+        left: var(--spacing-md);
+        width: 45px;
+        height: 45px;
+    }
+    
+    .stat-number {
+        font-size: var(--font-size-4xl);
+    }
+}
